@@ -25,8 +25,8 @@ The task is as follows. Write a solution for this with a class named Checkouter 
 - Sum() : double is called only when all items has been checked into the checkout. It returns the total sum for all items accounting for the special offers.
 
 ## Some notes about the solution
-1- I tried the TDD approach to develope this project.
-2- In the problem description, the weight argument is double and the Sum method returns decimal. However, I believe floating point numbers are not ideal and shouldn't be used for finanical calculations. For further information, look at https://stackoverflow.com/questions/3730019/why-not-use-double-or-float-to-represent-currency.
-3- In most projects, I use dependency injection (specifically Microsoft.Extensions.DependencyInjection) to decouple components and improve maintainability. However, for the sake of simplicity in this project, I created the resources manually and injected them to the Checkout constructor.
-4- The project doesn't have any logs and we need to debug the code whenever it is needed. However, I usually utilize Microsoft.Extensions.Logging to log into Console, Cloudwatch, SEQ and etc.
-5- I have implemented two repositories, ProductRepository and DiscountStrategyRepository, which currently serve as factories for creating and initializing products and discount strategies. As a further improvement, we can read data from a database. I typically use Dapper to fetch data from databases.
+- I tried the TDD approach to develope this project.
+- In the problem description, the weight argument is double and the Sum method returns decimal. However, I believe floating point numbers are not ideal and shouldn't be used for finanical calculations. For further information, look at https://stackoverflow.com/questions/3730019/why-not-use-double-or-float-to-represent-currency.
+- In most projects, I use dependency injection (specifically Microsoft.Extensions.DependencyInjection) to decouple components and improve maintainability. However, for the sake of simplicity in this project, I created the resources manually and injected them to the Checkout constructor.
+- The project doesn't have any logs and we need to debug the code whenever it is needed. However, I usually utilize Microsoft.Extensions.Logging to log into Console, Cloudwatch, SEQ and etc.
+- I have implemented two repositories, ProductRepository and DiscountStrategyRepository, which currently serve as factories for creating and initializing products and discount strategies. As a further improvement, we can read data from a database. I typically use Dapper to fetch data from databases.
