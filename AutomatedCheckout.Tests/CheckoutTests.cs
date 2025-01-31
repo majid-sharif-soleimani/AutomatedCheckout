@@ -102,12 +102,16 @@ namespace AutomatedCheckout.Tests
         }
 
         [Test]
-        public void SumOfEmptyCartIsZero()
+        public void TheSumOfIsZero_WhenACartIsEmpty()
         {
             var checkout = new Checkout.Checkout(new ProductRepository(), new DiscountStrategyRepository());
             Assert.That(() => checkout.Sum(), Is.EqualTo(0m));
         }
 
+        /// <summary>
+        /// When you purchase two packs of coffee, the regular price would be 22.49Kr × 2 = 44.98Kr. 
+        /// However, with our special offer, you receive a discount of 4.98Kr, bringing the total cost for two packs of coffee down to 40.00Kr.
+        /// </summary>
         [Test]
         public void TwoPacksOfCoffee_GetACorrectDiscount()
         {
@@ -131,6 +135,11 @@ namespace AutomatedCheckout.Tests
             Assert.That(() => checkout.Sum(), Is.EqualTo(62.49m));
         }
 
+        /// <summary>
+        /// When you purchase three packs of toothpaste, the regular price would be 24.95Kr × 3 = 74.85Kr. 
+        /// However, with our special offer, you only pay for two packs, saving 24.95Kr. 
+        /// This brings the total cost for three packs of toothpaste down to 49.90Kr.
+        /// </summary>
         [Test]
         public void ThreePacksOfToothpaste_CostsOnlyTwo()
         {
@@ -157,6 +166,11 @@ namespace AutomatedCheckout.Tests
             Assert.That(() => checkout.Sum(), Is.EqualTo(74.85));
         }
 
+        /// <summary>
+        /// When your total purchase for other items exceeds 150Kr, you qualify for a special discount on apples. 
+        /// Instead of the regular price of 32.95Kr/kg, you can purchase apples at a discounted rate of 16.95Kr/kg. 
+        /// This offer allows you to enjoy significant savings on apples while shopping for other products.
+        /// </summary>
         [Test]
         public void MakeSureThat_ShoppingOtherItemsForOver150kr_GetCorrectDiscountON_Apples()
         {
