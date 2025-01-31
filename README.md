@@ -32,3 +32,4 @@ The task is as follows. Write a solution for this with a class named Checkouter 
 - The project doesn't have any logs and we need to debug the code whenever it is needed. However, I usually utilize Microsoft.Extensions.Logging to log into Console, Cloudwatch, SEQ and etc.
 - I have implemented two repositories, ProductRepository and DiscountStrategyRepository, which currently serve as factories for creating and initializing products and discount strategies. As a further improvement, we can read data from a database. I typically use Dapper to fetch data from databases.
 - The project entry point is AutomatedCheckout.Tests/CheckoutTests.cs
+- For the sake of simplicity, Add methods in the Checkout class are not thread safe for now.
