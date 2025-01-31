@@ -19,6 +19,7 @@ There is an automated checkout where each item is entered by its item identifica
 - Buy two packs of coffee for 40kr. Buy two breads for 20kr.
 - Buy three packs of toothpaste and pay for two.
 - Shop other items for over 150kr and you can buy appels for the price of 16.95Kr/kg.
+
 The task is as follows. Write a solution for this with a class named Checkouter It should have three methods:
 - AddItem(itemId : int) is called each time an item that does not have a price per weight is entered into the checkout.
 - AddItem(itemId : int, weight : double) is called each time an item that does have a price per weight is entered into the checkout.
